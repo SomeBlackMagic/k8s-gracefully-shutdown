@@ -1,0 +1,15 @@
+[Unit]
+Description=Drain Kubernetes node before shutdown
+DefaultDependencies=no
+Before=shutdown.target reboot.target halt.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/k8s-gracefully-shutdown.sh
+RemainAfterExit=true
+StandardOutput=tty
+StandardError=tty
+TimeoutSec=300
+
+[Install]
+WantedBy=halt.target reboot.target shutdown.target

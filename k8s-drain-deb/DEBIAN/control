@@ -1,0 +1,9 @@
+Package: k8s-drain
+Version: 1.0
+Section: base
+Priority: optional
+Architecture: all
+Depends: whiptail
+Maintainer: Your Name <youremail@example.com>
+Description: A script to drain Kubernetes nodes before shutdown or reboot
+ This package provides a script and systemd unit to drain Kubernetes nodes before system shutdown or reboot.
